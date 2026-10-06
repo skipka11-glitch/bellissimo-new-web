@@ -1,0 +1,270 @@
+{
+  "title": "toto video nemá kameru",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "board_height": 768
+  },
+  "disclosure": "ai avatar · ai hlas",
+  "placeholders": {
+    "KREDITY": "doplní sa po produkcii z mcp__Higgsfield__transactions",
+    "EUR": "kredity × cena kreditu z plánu (PLUS: 49 USD / 1000 kr.)",
+    "EUR_SLOVOM": "suma slovom pre hlas, napr. 'osemnásť'",
+    "CAS": "nameraný čas produkcie v hodinách",
+    "CAS_SLOVOM": "čas slovom, napr. 'necelé štyri hodiny'"
+  },
+  "scenes": [
+    {
+      "id": "s01",
+      "part": "hook",
+      "board": {
+        "type": "statement",
+        "text": "bez *kamery.*"
+      },
+      "vo": "Toto video nemá kameru, štúdio ani jediný natáčací deň. A predsa sa ti práve pozerám do očí.",
+      "subs": [
+        "toto video nemá *kameru*,",
+        "štúdio ani natáčací deň.",
+        "a predsa sa ti",
+        "pozerám do *očí.*"
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "odhalenie",
+      "board": {
+        "type": "checklist",
+        "badge": "ai",
+        "title": "kto ti to hovorí",
+        "items": [
+          "tvár: *vygenerovaná*",
+          "hlas: *naklonovaný*",
+          "scenár: napísaný s *ai*"
+        ]
+      },
+      "vo": "Lebo ja nie som skutočný človek. Som AI avatar. Moju tvár vytvoril generátor obrázkov a hlas, ktorý počuješ, je klon z dvadsiatich sekúnd nahrávky skutočného človeka. A ostanem s tebou až do konca.",
+      "subs": [
+        "ja nie som",
+        "skutočný *človek.*",
+        "som *ai avatar.*",
+        "tvár z generátora,",
+        "hlas z *dvadsiatich sekúnd*",
+        "skutočnej nahrávky.",
+        "ostanem s tebou",
+        "až do *konca.*"
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "osnova",
+      "board": {
+        "type": "cards",
+        "title": "čo ťa čaká",
+        "cards": [
+          [
+            "1.",
+            "príklady"
+          ],
+          [
+            "2.",
+            "postup"
+          ],
+          [
+            "3.",
+            "náklady"
+          ]
+        ]
+      },
+      "vo": "Ukážem ti tri veci, ktoré takto vznikli. Potom presný postup krok za krokom. A nakoniec čísla: koľko to stálo a ako dlho to trvalo.",
+      "subs": [
+        "tri *príklady*,",
+        "presný *postup*",
+        "a nakoniec *čísla.*"
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "1. príklady",
+      "board": {
+        "type": "example",
+        "badge": "1.",
+        "title": "reklama pre *reštauráciu*",
+        "media": "ex1"
+      },
+      "vo": "Prvý príklad: pätnásťsekundová reklama pre taliansku reštauráciu Bellissimo. Čerstvé cestoviny, teplé svetlo a pokojná hudba. Bez fotografa a bez jediného taniera navyše.",
+      "subs": [
+        "reklama pre",
+        "*reštauráciu.*",
+        "čerstvé cestoviny,",
+        "teplé *svetlo.*",
+        "bez fotografa,",
+        "bez taniera *navyše.*"
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "1. príklady",
+      "board": {
+        "type": "example",
+        "badge": "2.",
+        "title": "jedna tvár, *všade*",
+        "media": "ex2"
+      },
+      "vo": "Druhý príklad: tá istá tvár na pláži, v kaviarni aj v kancelárii. Bez cestovania a bez prezliekania. Stačí jedna referenčná fotka a popis prostredia.",
+      "subs": [
+        "tá istá *tvár*",
+        "na pláži, v kaviarni,",
+        "v *kancelárii.*",
+        "stačí jedna",
+        "referenčná *fotka.*"
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "1. príklady",
+      "board": {
+        "type": "checklist",
+        "badge": "3.",
+        "title": "jedno video, *tri jazyky*",
+        "items": [
+          "slovenčina",
+          "*english*",
+          "*italiano*"
+        ]
+      },
+      "vo": "Tretí príklad: tento istý úvod v angličtine a taliančine. Preklad, nový hlas aj pohyb pier vzniknú automaticky. Počúvaj.",
+      "subs": [
+        "ten istý úvod",
+        "v *angličtine*",
+        "a *taliančine.*",
+        "pery sa *prispôsobia.*",
+        "*počúvaj.*"
+      ],
+      "tail": [
+        {
+          "media": "ex3_en",
+          "sub": "*english*"
+        },
+        {
+          "media": "ex3_it",
+          "sub": "*italiano*"
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "2. postup",
+      "board": {
+        "type": "checklist",
+        "badge": "2.",
+        "title": "*postup*",
+        "items": [
+          "scenár",
+          "tvár z *jednej fotky*",
+          "hlas z *20 sekúnd*",
+          "video s pohybom pier",
+          "strih a *kontrola*"
+        ]
+      },
+      "vo": "Postup má päť krokov. Najprv scenár. Potom tvár: stačila jedna fotka. Tretí krok je hlas. Dvadsať sekúnd čistej nahrávky a model sa naučí farbu aj tempo reči.",
+      "highlight_items": [
+        0,
+        1,
+        2
+      ],
+      "subs": [
+        "päť *krokov.*",
+        "najprv *scenár.*",
+        "tvár z jednej *fotky.*",
+        "hlas z dvadsiatich",
+        "*sekúnd* nahrávky."
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "2. postup",
+      "board": {
+        "type": "checklist",
+        "badge": "2.",
+        "title": "*postup*",
+        "items": [
+          "scenár",
+          "tvár z *jednej fotky*",
+          "hlas z *20 sekúnd*",
+          "video s pohybom pier",
+          "strih a *kontrola*"
+        ]
+      },
+      "highlight_items": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "vo": "Štvrtý krok: z fotky a zvuku vznikne video, v ktorom sa pery hýbu presne podľa slov. A piaty: strih. Grafika hore, ja dole, titulky v strede a na záver kontrola exportu.",
+      "subs": [
+        "pery sa hýbu",
+        "podľa *slov.*",
+        "potom *strih:*",
+        "grafika hore,",
+        "titulky v strede,",
+        "*kontrola* exportu."
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "3. náklady",
+      "board": {
+        "type": "costs",
+        "badge": "3.",
+        "title": "*náklady* a čas",
+        "big": "{{EUR}} € · {{CAS}} h",
+        "rows": [
+          [
+            "hlas",
+            "{{KR_HLAS}} kr."
+          ],
+          [
+            "avatar",
+            "{{KR_AVATAR}} kr."
+          ],
+          [
+            "príklady",
+            "{{KR_PRIKLADY}} kr."
+          ],
+          [
+            "opravy",
+            "{{KR_OPRAVY}} kr."
+          ]
+        ]
+      },
+      "vo": "A teraz čísla. Celé video stálo {{EUR_SLOVOM}} eur. Od prvého slova scenára po hotový export to trvalo {{CAS_SLOVOM}}. Väčšinu času nezabrala technika, ale čakanie na generovanie a kontrola.",
+      "subs": [
+        "celé video stálo",
+        "*{{EUR}} €.*",
+        "od scenára po export",
+        "*{{CAS}} hodiny.*",
+        "najviac času",
+        "zabralo *čakanie.*"
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "záver",
+      "board": {
+        "type": "statement",
+        "text": "aj toto je *ai.*",
+        "button": "nástroje v popise"
+      },
+      "vo": "A ešte jedna vec. Aj táto posledná veta je umelá inteligencia. Všetky nástroje, ktoré stoja za týmto videom, nájdeš v popise.",
+      "subs": [
+        "aj táto *posledná veta*",
+        "je umelá *inteligencia.*",
+        "nástroje nájdeš",
+        "v *popise.*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<title>boards</title>
+<style>
+  @font-face { font-family: "Caslon"; src: url("../fonts/LibreCaslonText-Regular.ttf"); }
+  @font-face { font-family: "Migra"; src: url("../fonts/PlayfairDisplay-Italic.ttf"); font-style: italic; }
+  @font-face { font-family: "Frama"; src: url("../fonts/Inter-Regular.otf"); }
+
+  :root {
+    --burgundy: #6B0F12;
+    --burgundy-dark: #3B0A0C;
+    --terracotta: #C9705F;
+    --blush-grey: #E6DCDA;
+    --bg-blush: #F7ECEA;
+    --card: #FFFBFA;
+    --text: #1F1414;
+    --radius-card: 16px;
+    --shadow-soft: 0 6px 18px rgba(59, 10, 12, 0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 768px; background: var(--bg-blush); overflow: hidden; }
+  body {
+    font-family: "Caslon", "Times New Roman", serif;
+    color: var(--burgundy-dark);
+    display: flex; flex-direction: column; align-items: center;
+    padding-top: 96px; text-align: center; position: relative;
+  }
+  em { font-family: "Migra", serif; font-style: italic; color: var(--burgundy); }
+
+  .disclosure {
+    position: absolute; top: 36px; right: 40px;
+    font-family: "Frama", sans-serif; font-size: 22px; color: var(--burgundy);
+    border: 1.5px solid var(--burgundy); border-radius: 999px; padding: 6px 16px;
+  }
+  .badge {
+    display: inline-block; background: var(--burgundy); color: #fff;
+    font-family: "Migra", serif; font-style: italic; font-size: 34px;
+    border-radius: 999px; padding: 4px 26px 8px; margin-bottom: 18px;
+  }
+  h1 { font-family: "Migra", serif; font-style: italic; font-weight: 400; font-size: 64px; letter-spacing: -0.015em; color: var(--burgundy-dark); }
+  h1 em { color: var(--burgundy); }
+  .statement { font-size: 112px; letter-spacing: -0.02em; margin-top: 150px; }
+  .button {
+    margin-top: 48px; background: var(--burgundy); color: #fff;
+    font-family: "Frama", sans-serif; font-size: 30px; border-radius: 999px; padding: 14px 40px;
+  }
+
+  .card {
+    background: var(--card); border-radius: var(--radius-card); box-shadow: var(--shadow-soft);
+  }
+  .cards { display: flex; gap: 28px; margin-top: 56px; }
+  .cards .card { width: 270px; height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+  .cards .n { font-family: "Migra", serif; font-style: italic; color: #fff; background: var(--burgundy); border-radius: 999px; padding: 2px 22px 6px; font-size: 34px; }
+  .cards .t { font-size: 40px; }
+
+  ul.check { list-style: none; margin-top: 34px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  ul.check.dense { gap: 8px; margin-top: 24px; }
+  ul.check li { display: flex; align-items: center; gap: 18px; font-size: 44px; }
+  ul.check.dense li { font-size: 38px; }
+  ul.check li .dot {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--burgundy);
+    display: inline-flex; align-items: center; justify-content: center; flex: none;
+  }
+  ul.check li.off { color: #b9a9a6; }
+  ul.check li.off em { color: #c9b7b4; }
+  ul.check li.off .dot { background: var(--blush-grey); }
+
+  /* example scenes: media is composited by build.py into this exact rect */
+  .media { position: absolute; left: 170px; top: 290px; width: 740px; height: 416px; }
+  .media::after {
+    content: "play"; position: absolute; right: 18px; bottom: -58px;
+    font-family: "Frama", sans-serif; font-size: 22px; color: #fff; background: var(--burgundy);
+    border-radius: 999px; padding: 6px 20px;
+  }
+
+  .big { font-family: "Migra", serif; font-style: italic; font-size: 76px; color: var(--burgundy); margin-top: 24px; }
+  table { margin-top: 22px; border-collapse: separate; border-spacing: 0 10px; }
+  td { font-size: 36px; padding: 10px 34px; background: var(--card); }
+  td:first-child { border-radius: 16px 0 0 16px; text-align: left; }
+  td:last-child { border-radius: 0 16px 16px 0; text-align: right; font-family: "Frama", sans-serif; font-size: 30px; color: var(--burgundy); }
+  .tick { width: 22px; height: 22px; }
+</style>
+</head>
+<body>
+<script>
+  const TICK = '<svg class="tick" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  const md = s => s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+  window.renderBoard = (scene, disclosure, values) => {
+    const fill = s => s.replace(/\{\{(\w+)\}\}/g, (m, k) => (values && values[k] != null ? values[k] : m));
+    const b = scene.board;
+    let h = `<div class="disclosure">${disclosure}</div>`;
+    if (b.badge) h += `<div class="badge">${b.badge}</div>`;
+    if (b.title) h += `<h1>${md(fill(b.title))}</h1>`;
+    if (b.type === "statement") {
+      h += `<h1 class="statement">${md(fill(b.text))}</h1>`;
+      if (b.button) h += `<div class="button">${b.button}</div>`;
+    } else if (b.type === "cards") {
+      h += `<div class="cards">` + b.cards.map(([n, t]) =>
+        `<div class="card"><span class="n">${n}</span><span class="t">${t}</span></div>`).join("") + `</div>`;
+    } else if (b.type === "checklist") {
+      const on = scene.highlight_items || b.items.map((_, i) => i);
+      const dense = b.items.length > 3 ? " dense" : "";
+      h += `<ul class="check${dense}">` + b.items.map((it, i) =>
+        `<li class="${on.includes(i) ? "" : "off"}"><span class="dot">${TICK}</span><span>${md(it)}</span></li>`).join("") + `</ul>`;
+    } else if (b.type === "example") {
+      h += `<div class="media card"></div>`;
+    } else if (b.type === "costs") {
+      h += `<div class="big">${fill(b.big)}</div>`;
+      h += `<table>` + b.rows.map(([k, v]) => `<tr><td>${k}</td><td>${fill(v)}</td></tr>`).join("") + `</table>`;
+    }
+    document.body.innerHTML = h;
+  };
+</script>
+</body>
+</html>
