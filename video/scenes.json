@@ -8,11 +8,8 @@
   },
   "disclosure": "ai avatar · syntetický hlas",
   "placeholders": {
-    "KREDITY": "doplní sa po produkcii z mcp__Higgsfield__transactions",
-    "EUR": "kredity × cena kreditu z plánu (PLUS: 49 USD / 1000 kr.)",
-    "EUR_SLOVOM": "suma slovom pre hlas, napr. 'osemnásť'",
-    "CAS": "nameraný čas produkcie v hodinách",
-    "CAS_SLOVOM": "čas slovom, napr. 'necelé štyri hodiny'"
+    "CAS": "hodiny od zadania po export (zaokrúhlené nahor)",
+    "CAS_SLOVOM": "čas slovom pre hlas"
   },
   "scenes": [
     {
@@ -239,34 +236,34 @@
         "type": "costs",
         "badge": "3.",
         "title": "*náklady* a čas",
-        "big": "{{EUR}} € · {{CAS}} h",
+        "big": "70 kreditov · {{CAS}} h",
         "rows": [
           [
-            "hlas",
-            "{{KR_HLAS}} kr."
+            "hlas (vidIQ)",
+            "70 kr."
           ],
           [
-            "avatar",
-            "{{KR_AVATAR}} kr."
+            "avatar (SadTalker)",
+            "0 €"
           ],
           [
-            "príklady",
-            "{{KR_PRIKLADY}} kr."
+            "grafika a strih",
+            "0 €"
           ],
           [
-            "opravy",
-            "{{KR_OPRAVY}} kr."
+            "render na CPU",
+            "{{RENDER}} h"
           ]
         ]
       },
-      "vo": "A teraz čísla. Celé video stálo {{EUR_SLOVOM}} eur. Od prvého slova scenára po hotový export to trvalo {{CAS_SLOVOM}}. Väčšinu času nezabrala technika, ale čakanie na generovanie a kontrola.",
+      "vo": "A teraz čísla. Hlas stál sedemdesiat kreditov vidIQ, vrátane jednej verzie, ktorá išla do koša. Avatar, grafika aj strih nestáli nič, bežali na open-source nástrojoch. Od zadania po hotový export to trvalo {{CAS_SLOVOM}} a väčšinu z toho počítač renderoval tvár.",
       "subs": [
-        "celé video stálo",
-        "*{{EUR}} €.*",
-        "od scenára po export",
-        "*{{CAS}} hodiny.*",
-        "najviac času",
-        "zabralo *čakanie.*"
+        "hlas: *70 kreditov*",
+        "avatar a strih:",
+        "*0 €*",
+        "od zadania po export",
+        "*{{CAS}} h*",
+        "väčšinu času *render.*"
       ]
     },
     {

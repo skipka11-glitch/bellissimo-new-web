@@ -185,13 +185,13 @@ def build_scene(scene, idx, prev_part, args, build, statics):
               "-i", str(swoosh if scene["part"] != prev_part else pop)]
     n = 6
     cover = lambda w, h: f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}"
-    av_chain = (f"[2:v]fps={FPS},scale={W}:-2,crop={W}:{AV_H}:0:'min(ih-{AV_H},{args.crop_y})',setsar=1,"
+    av_chain = (f"[2:v]fps={FPS},scale={W}:-2,crop={W}:{AV_H}:0:'min(ih-{AV_H},{args.crop_y})',setsar=1,unsharp=5:5:0.5,"
                 f"tpad=stop_mode=clone:stop_duration={total:.3f},trim=duration={main_len:.3f},setpts=PTS-STARTPTS[av0]")
     f = [av_chain]
     av_parts = ["[av0]"]
     for i, (p, d, _) in enumerate(tails):
         inputs += ["-i", str(p)]
-        f.append(f"[{n}:v]fps={FPS},{cover(W, AV_H)},setsar=1,trim=duration={d:.3f},setpts=PTS-STARTPTS[tv{i}]")
+        f.append(f"[{n}:v]fps={FPS},{cover(W, AV_H)},setsar=1,unsharp=5:5:0.5,trim=duration={d:.3f},setpts=PTS-STARTPTS[tv{i}]")
         av_parts.append(f"[tv{i}]")
         n += 1
     if len(av_parts) > 1:

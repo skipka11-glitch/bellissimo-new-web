@@ -1,9 +1,9 @@
 # scenár – „toto video nemá kameru“
 
 Rozprávač: **AI avatar** (tvár z dodanej fotky, pohyb pier SadTalker, syntetický hlas Bella z ElevenLabs cez vidIQ).
-Formát: 9:16, 1080×1920, ~2 min (vhodné aj pre YouTube Shorts). Štruktúra a vizuál podľa `STYL.md`, kap. 5: očíslované kapitoly, doska hore, avatar dole.
+Formát: 9:16, 1080×1920, ~2,5 min. Štruktúra a vizuál podľa `STYL.md`, kap. 5: očíslované kapitoly, doska hore, avatar dole.
 
-> Zdroj pravdy je `scenes.json`. Hodnoty `{{…}}` v kapitole 3 sa doplnia až zo skutočných nákladov a nameraného času.
+> Zdroj pravdy je `scenes.json`. Hodnoty `{{…}}` v kapitole 3 sa doplnia až z nameraného času.
 
 ## s01 · hook
 
@@ -85,9 +85,9 @@ scenár  ·  tvár z *jednej fotky*  ·  *syntetický* hlas  ·  video s pohybom
 
 **doska:** `costs` – *náklady* a čas
 
-**hlas (avatar):** A teraz čísla. Celé video stálo {{EUR_SLOVOM}} eur. Od prvého slova scenára po hotový export to trvalo {{CAS_SLOVOM}}. Väčšinu času nezabrala technika, ale čakanie na generovanie a kontrola.
+**hlas (avatar):** A teraz čísla. Hlas stál sedemdesiat kreditov vidIQ, vrátane jednej verzie, ktorá išla do koša. Avatar, grafika aj strih nestáli nič, bežali na open-source nástrojoch. Od zadania po hotový export to trvalo {{CAS_SLOVOM}} a väčšinu z toho počítač renderoval tvár.
 
-**titulky:** celé video stálo / *{{EUR}} €.* / od scenára po export / *{{CAS}} hodiny.* / najviac času / zabralo *čakanie.*
+**titulky:** hlas: *70 kreditov* / avatar a strih: / *0 €* / od zadania po export / *{{CAS}} h* / väčšinu času *render.*
 
 ## s10 · záver
 
