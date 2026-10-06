@@ -1,6 +1,6 @@
 # scenár – „toto video nemá kameru“
 
-Rozprávač: **AI avatar** (tvár z referenčnej fotky, hlas naklonovaný zo vzorky `Hlas_006.m4a`).
+Rozprávač: **AI avatar** (tvár z referenčnej fotky, hlas naklonovaný zo vzorky ElevenLabs „Bella – Professional Bright Warm“).
 Formát: 9:16, 1080×1920, ~2 min (vhodné aj pre YouTube Shorts). Štruktúra a vizuál podľa `STYL.md`, kap. 5: očíslované kapitoly, doska hore, avatar dole.
 
 > Zdroj pravdy je `scenes.json`. Tento súbor je jeho čitateľná verzia. Text je zámerne rodovo neutrálny (žiadne „natočila/natočil“), aby sedel k hlasu aj tvári.

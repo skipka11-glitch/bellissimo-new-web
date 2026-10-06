@@ -7,13 +7,13 @@ Postup krok za krokom. Každý platený krok má cenu overenú cez `get_cost` (p
 | čo | stav | ako vyriešiť |
 |---|---|---|
 | kredity | **1,95 kr.**, plán `free`, dobitie kreditov pre tento workspace nie je dostupné | PLUS (1 000 kr./mes., 49 USD) stačí s rezervou |
-| klon hlasu | vzorka `Hlas_006.m4a` je OK (20 s, mono, 44,1 kHz), **hlas zatiaľ nevytvorený** | widget *Create Voice* → Upload, alebo povoliť `upload.higgsfield.ai` v sieti prostredia |
+| klon hlasu | nová vzorka: ElevenLabs „Bella – Professional Bright Warm“ (48 s, mono, súvislá reč) – vhodná; **hlas zatiaľ nevytvorený** | widget *Create Voice* → Upload, alebo povoliť `upload.higgsfield.ai` v sieti prostredia. Záloha bez klonovania: prednastavený hlas „Bella“ v Higgsfielde (`eba85120-4ed5-5202-a6f6-696e2c6fe2b6`) |
 | fotka avatara | dodaná (9:16, pláž) | rovnaký problém s uploadom: nahrať cez `media_upload_widget` |
-| zhoda hlasu a tváre | výška hlasu vo vzorke ≈ 154 Hz (hranica muž/žena), avatar je žena | **potvrdiť**, že hlas k tvári sedí |
+| zhoda hlasu a tváre | vyriešené: výška hlasu ≈ 213 Hz (ženský), sedí k avatarovi | – |
 
 ## 1. hlas
 
-1. `create_voice` (Upload) → názov „Môj hlas – AI rozprávač“ → `voice_id`, `voice_type: "element"`.
+1. `create_voice` (Upload, súbor ElevenLabs „Bella“) → názov „Bella – AI rozprávačka“ → `voice_id`, `voice_type: "element"`.
 2. Počkať, kým `list_voices` ukáže `status=completed`, `is_audio_eligible=true`.
 3. **Test slovenčiny** (1 replika, s01): `generate_audio` s `seed_audio` a s `text2speech_v2` + `variant: "elevenlabs"`. Vybrať ten, ktorý vyslovuje slovenčinu prirodzenejšie. 0,6 kr. za repliku.
 4. `generate_audio_batch` pre s01 až s10 (text = pole `vo` v `scenes.json`). Uložiť ako `assets/vo/sXX.wav`.
