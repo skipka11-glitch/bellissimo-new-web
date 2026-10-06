@@ -6,7 +6,7 @@
     "fps": 30,
     "board_height": 768
   },
-  "disclosure": "ai avatar · ai hlas",
+  "disclosure": "ai avatar · syntetický hlas",
   "placeholders": {
     "KREDITY": "doplní sa po produkcii z mcp__Higgsfield__transactions",
     "EUR": "kredity × cena kreditu z plánu (PLUS: 49 USD / 1000 kr.)",
@@ -38,19 +38,18 @@
         "badge": "ai",
         "title": "kto ti to hovorí",
         "items": [
-          "tvár: *vygenerovaná*",
-          "hlas: *naklonovaný*",
-          "scenár: napísaný s *ai*"
+          "tvár: *jedna fotka*",
+          "pohyb: *open-source model*",
+          "hlas: *syntetický*"
         ]
       },
-      "vo": "Lebo ja nie som skutočný človek. Som AI avatar. Moju tvár vytvoril generátor obrázkov a hlas, ktorý počuješ, je klon z dvadsiatich sekúnd nahrávky skutočného človeka. A ostanem s tebou až do konca.",
+      "vo": "Lebo ja nie som skutočný človek. Som AI avatar. Moja tvár je jedna fotka, ktorú rozhýbal open-source model, a hlas, ktorý počuješ, je syntetický. A ostanem s tebou až do konca.",
       "subs": [
         "ja nie som",
         "skutočný *človek.*",
         "som *ai avatar.*",
-        "tvár z generátora,",
-        "hlas z *dvadsiatich sekúnd*",
-        "skutočnej nahrávky.",
+        "tvár je *jedna fotka*,",
+        "hlas je *syntetický.*",
         "ostanem s tebou",
         "až do *konca.*"
       ]
@@ -87,37 +86,57 @@
       "id": "s04",
       "part": "1. príklady",
       "board": {
-        "type": "example",
+        "type": "checklist",
         "badge": "1.",
         "title": "reklama pre *reštauráciu*",
-        "media": "ex1"
+        "items": [
+          "menu z *webu*",
+          "krátky text",
+          "bez *natáčania*"
+        ]
       },
-      "vo": "Prvý príklad: pätnásťsekundová reklama pre taliansku reštauráciu Bellissimo. Čerstvé cestoviny, teplé svetlo a pokojná hudba. Bez fotografa a bez jediného taniera navyše.",
+      "vo": "Prvý príklad: reklama pre taliansku reštauráciu Bellissimo v Nitre. Stačil krátky text a menu z ich webu. Bez fotografa, bez štúdia a bez jediného natáčania.",
       "subs": [
         "reklama pre",
         "*reštauráciu.*",
-        "čerstvé cestoviny,",
-        "teplé *svetlo.*",
+        "krátky text",
+        "a menu z *webu.*",
         "bez fotografa,",
-        "bez taniera *navyše.*"
+        "bez *natáčania.*"
+      ],
+      "tail": [
+        {
+          "media": "ex1",
+          "sub": "*bellissimo* · oc max nitra"
+        }
       ]
     },
     {
       "id": "s05",
       "part": "1. príklady",
       "board": {
-        "type": "example",
-        "badge": "2.",
-        "title": "jedna tvár, *všade*",
-        "media": "ex2"
+        "type": "checklist",
+        "badge": "1.",
+        "title": "odpoveď *zákazníkovi*",
+        "items": [
+          "otázka zákazníka",
+          "odpoveď *avatara*",
+          "hneď na *web*"
+        ]
       },
-      "vo": "Druhý príklad: tá istá tvár na pláži, v kaviarni aj v kancelárii. Bez cestovania a bez prezliekania. Stačí jedna referenčná fotka a popis prostredia.",
+      "vo": "Druhý príklad: odpoveď na otázku zákazníka. Napíšem odpoveď, avatar ju povie a video môže ísť hneď na web alebo do správ.",
       "subs": [
-        "tá istá *tvár*",
-        "na pláži, v kaviarni,",
-        "v *kancelárii.*",
-        "stačí jedna",
-        "referenčná *fotka.*"
+        "odpoveď na otázku",
+        "*zákazníka.*",
+        "avatar ju *povie*",
+        "a video ide",
+        "hneď na *web.*"
+      ],
+      "tail": [
+        {
+          "media": "ex2",
+          "sub": "dá sa u vás *rezervovať?*"
+        }
       ]
     },
     {
@@ -125,7 +144,7 @@
       "part": "1. príklady",
       "board": {
         "type": "checklist",
-        "badge": "3.",
+        "badge": "1.",
         "title": "jedno video, *tri jazyky*",
         "items": [
           "slovenčina",
@@ -162,12 +181,12 @@
         "items": [
           "scenár",
           "tvár z *jednej fotky*",
-          "hlas z *20 sekúnd*",
+          "*syntetický* hlas",
           "video s pohybom pier",
           "strih a *kontrola*"
         ]
       },
-      "vo": "Postup má päť krokov. Najprv scenár. Potom tvár: stačila jedna fotka. Tretí krok je hlas. Dvadsať sekúnd čistej nahrávky a model sa naučí farbu aj tempo reči.",
+      "vo": "Postup má päť krokov. Najprv scenár. Potom tvár: stačila jedna fotka. Tretí krok je hlas: syntetický hlas prečíta celý scenár naraz a potom sa rozstrihá na scény.",
       "highlight_items": [
         0,
         1,
@@ -177,8 +196,8 @@
         "päť *krokov.*",
         "najprv *scenár.*",
         "tvár z jednej *fotky.*",
-        "hlas z dvadsiatich",
-        "*sekúnd* nahrávky."
+        "*syntetický* hlas",
+        "prečíta celý scenár."
       ]
     },
     {
@@ -191,7 +210,7 @@
         "items": [
           "scenár",
           "tvár z *jednej fotky*",
-          "hlas z *20 sekúnd*",
+          "*syntetický* hlas",
           "video s pohybom pier",
           "strih a *kontrola*"
         ]

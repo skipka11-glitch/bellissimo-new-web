@@ -1,11 +1,9 @@
 # scenár – „toto video nemá kameru“
 
-Rozprávač: **AI avatar** (tvár z referenčnej fotky, hlas naklonovaný zo vzorky ElevenLabs „Bella – Professional Bright Warm“).
+Rozprávač: **AI avatar** (tvár z dodanej fotky, pohyb pier SadTalker, syntetický hlas Bella z ElevenLabs cez vidIQ).
 Formát: 9:16, 1080×1920, ~2 min (vhodné aj pre YouTube Shorts). Štruktúra a vizuál podľa `STYL.md`, kap. 5: očíslované kapitoly, doska hore, avatar dole.
 
-> Zdroj pravdy je `scenes.json`. Tento súbor je jeho čitateľná verzia. Text je zámerne rodovo neutrálny (žiadne „natočila/natočil“), aby sedel k hlasu aj tvári.
-
-Hodnoty `{{…}}` v kapitole 3 sa doplnia **až po produkcii** zo skutočných transakcií (`transactions`) a nameraného času. Žiadne odhady vo videu.
+> Zdroj pravdy je `scenes.json`. Hodnoty `{{…}}` v kapitole 3 sa doplnia až zo skutočných nákladov a nameraného času.
 
 ## s01 · hook
 
@@ -18,11 +16,11 @@ Hodnoty `{{…}}` v kapitole 3 sa doplnia **až po produkcii** zo skutočných t
 ## s02 · odhalenie
 
 **doska:** `checklist` – kto ti to hovorí
-tvár: *vygenerovaná*  ·  hlas: *naklonovaný*  ·  scenár: napísaný s *ai*
+tvár: *jedna fotka*  ·  pohyb: *open-source model*  ·  hlas: *syntetický*
 
-**hlas (avatar):** Lebo ja nie som skutočný človek. Som AI avatar. Moju tvár vytvoril generátor obrázkov a hlas, ktorý počuješ, je klon z dvadsiatich sekúnd nahrávky skutočného človeka. A ostanem s tebou až do konca.
+**hlas (avatar):** Lebo ja nie som skutočný človek. Som AI avatar. Moja tvár je jedna fotka, ktorú rozhýbal open-source model, a hlas, ktorý počuješ, je syntetický. A ostanem s tebou až do konca.
 
-**titulky:** ja nie som / skutočný *človek.* / som *ai avatar.* / tvár z generátora, / hlas z *dvadsiatich sekúnd* / skutočnej nahrávky. / ostanem s tebou / až do *konca.*
+**titulky:** ja nie som / skutočný *človek.* / som *ai avatar.* / tvár je *jedna fotka*, / hlas je *syntetický.* / ostanem s tebou / až do *konca.*
 
 ## s03 · osnova
 
@@ -34,21 +32,25 @@ tvár: *vygenerovaná*  ·  hlas: *naklonovaný*  ·  scenár: napísaný s *ai*
 
 ## s04 · 1. príklady
 
-**doska:** `example` – reklama pre *reštauráciu*
-**ukážka v karte:** `assets/media/ex1.mp4`
+**doska:** `checklist` – reklama pre *reštauráciu*
+menu z *webu*  ·  krátky text  ·  bez *natáčania*
 
-**hlas (avatar):** Prvý príklad: pätnásťsekundová reklama pre taliansku reštauráciu Bellissimo. Čerstvé cestoviny, teplé svetlo a pokojná hudba. Bez fotografa a bez jediného taniera navyše.
+**hlas (avatar):** Prvý príklad: reklama pre taliansku reštauráciu Bellissimo v Nitre. Stačil krátky text a menu z ich webu. Bez fotografa, bez štúdia a bez jediného natáčania.
 
-**titulky:** reklama pre / *reštauráciu.* / čerstvé cestoviny, / teplé *svetlo.* / bez fotografa, / bez taniera *navyše.*
+**titulky:** reklama pre / *reštauráciu.* / krátky text / a menu z *webu.* / bez fotografa, / bez *natáčania.*
+
+**po hlase hrá v mieste avatara:** ex1
 
 ## s05 · 1. príklady
 
-**doska:** `example` – jedna tvár, *všade*
-**ukážka v karte:** `assets/media/ex2.mp4`
+**doska:** `checklist` – odpoveď *zákazníkovi*
+otázka zákazníka  ·  odpoveď *avatara*  ·  hneď na *web*
 
-**hlas (avatar):** Druhý príklad: tá istá tvár na pláži, v kaviarni aj v kancelárii. Bez cestovania a bez prezliekania. Stačí jedna referenčná fotka a popis prostredia.
+**hlas (avatar):** Druhý príklad: odpoveď na otázku zákazníka. Napíšem odpoveď, avatar ju povie a video môže ísť hneď na web alebo do správ.
 
-**titulky:** tá istá *tvár* / na pláži, v kaviarni, / v *kancelárii.* / stačí jedna / referenčná *fotka.*
+**titulky:** odpoveď na otázku / *zákazníka.* / avatar ju *povie* / a video ide / hneď na *web.*
+
+**po hlase hrá v mieste avatara:** ex2
 
 ## s06 · 1. príklady
 
@@ -64,16 +66,16 @@ slovenčina  ·  *english*  ·  *italiano*
 ## s07 · 2. postup
 
 **doska:** `checklist` – *postup*
-scenár  ·  tvár z *jednej fotky*  ·  hlas z *20 sekúnd*  ·  video s pohybom pier  ·  strih a *kontrola*
+scenár  ·  tvár z *jednej fotky*  ·  *syntetický* hlas  ·  video s pohybom pier  ·  strih a *kontrola*
 
-**hlas (avatar):** Postup má päť krokov. Najprv scenár. Potom tvár: stačila jedna fotka. Tretí krok je hlas. Dvadsať sekúnd čistej nahrávky a model sa naučí farbu aj tempo reči.
+**hlas (avatar):** Postup má päť krokov. Najprv scenár. Potom tvár: stačila jedna fotka. Tretí krok je hlas: syntetický hlas prečíta celý scenár naraz a potom sa rozstrihá na scény.
 
-**titulky:** päť *krokov.* / najprv *scenár.* / tvár z jednej *fotky.* / hlas z dvadsiatich / *sekúnd* nahrávky.
+**titulky:** päť *krokov.* / najprv *scenár.* / tvár z jednej *fotky.* / *syntetický* hlas / prečíta celý scenár.
 
 ## s08 · 2. postup
 
 **doska:** `checklist` – *postup*
-scenár  ·  tvár z *jednej fotky*  ·  hlas z *20 sekúnd*  ·  video s pohybom pier  ·  strih a *kontrola*
+scenár  ·  tvár z *jednej fotky*  ·  *syntetický* hlas  ·  video s pohybom pier  ·  strih a *kontrola*
 
 **hlas (avatar):** Štvrtý krok: z fotky a zvuku vznikne video, v ktorom sa pery hýbu presne podľa slov. A piaty: strih. Grafika hore, ja dole, titulky v strede a na záver kontrola exportu.
 
