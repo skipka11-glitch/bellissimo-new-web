@@ -191,7 +191,7 @@ def build_scene(scene, idx, prev_part, args, build, statics):
     av_parts = ["[av0]"]
     for i, (p, d, _) in enumerate(tails):
         inputs += ["-i", str(p)]
-        f.append(f"[{n}:v]fps={FPS},{cover(W, AV_H)},setsar=1,unsharp=5:5:0.5,trim=duration={d:.3f},setpts=PTS-STARTPTS[tv{i}]")
+        f.append(f"[{n}:v]fps={FPS},scale={W}:-2,crop={W}:{AV_H}:0:'min(ih-{AV_H},{args.crop_y})',setsar=1,unsharp=5:5:0.5,trim=duration={d:.3f},setpts=PTS-STARTPTS[tv{i}]")
         av_parts.append(f"[tv{i}]")
         n += 1
     if len(av_parts) > 1:
