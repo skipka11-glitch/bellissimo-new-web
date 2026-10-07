@@ -13,6 +13,9 @@ work="$root/build/sadtalker"; mkdir -p "$work" "$root/assets/avatar" "$root/asse
 render() {  # $1 = wav, $2 = output mp4
   local wav="$1" out="$2" id mp4; id="$(basename "$wav" .wav)"
   [ -s "$out" ] && { echo "skip $id"; return; }
+  # refuse silent input: a silent line renders a face that never moves its lips
+  local vol; vol="$(ffmpeg -hide_banner -nostats -i "$wav" -af volumedetect -f null - 2>&1 | sed -n 's/.*mean_volume: \(-*[0-9.]*\) dB.*/\1/p')"
+  awk -v v="$vol" 'BEGIN{exit !(v > -50)}' || { echo "tichý vstup $id ($vol dB)" >&2; return 1; }
   # SadTalker writes the final video as <result_dir>/<timestamp>.mp4 and deletes its temp folder;
   # reuse a finished render after an interruption instead of starting over
   mp4="$( (find "$work/$id" -maxdepth 1 -name '*.mp4' 2>/dev/null || true) | sort | tail -1)"

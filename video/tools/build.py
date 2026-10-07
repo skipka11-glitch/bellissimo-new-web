@@ -47,6 +47,13 @@ def probe_duration(path):
     return float(out)
 
 
+def mean_volume(path):
+    err = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", "volumedetect", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    m = re.search(r"mean_volume: (-?[\d.]+) dB", err)
+    return float(m.group(1)) if m else -99.0
+
+
 def has_audio(path):
     out = subprocess.run(
         ["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(path)],
@@ -150,6 +157,8 @@ def build_scene(scene, idx, prev_part, args, build, statics):
     if not audio_src:
         raise SystemExit(f"{sid}: chýba hlas (assets/vo/{sid}.wav) a avatar klip nemá zvuk")
     vo_len = probe_duration(audio_src)
+    if mean_volume(audio_src) < -50:
+        raise SystemExit(f"{sid}: hlas je tichý ({audio_src}) – skontroluj strih repliky")
     main_len = vo_len + PAD_END
 
     tails = []
