@@ -7,10 +7,6 @@
     "board_height": 768
   },
   "disclosure": "ai avatar · syntetický hlas",
-  "placeholders": {
-    "CAS": "hodiny od zadania po export (zaokrúhlené nahor)",
-    "CAS_SLOVOM": "čas slovom pre hlas"
-  },
   "scenes": [
     {
       "id": "s01",
@@ -236,7 +232,7 @@
         "type": "costs",
         "badge": "3.",
         "title": "*náklady* a čas",
-        "big": "70 kreditov · {{CAS}} h",
+        "big": "70 kreditov · 9+ h",
         "rows": [
           [
             "hlas (vidIQ)",
@@ -251,19 +247,20 @@
             "0 €"
           ],
           [
-            "render na CPU",
-            "{{RENDER}} h"
+            "render tváre na CPU",
+            "≈ 4,5 h"
           ]
         ]
       },
-      "vo": "A teraz čísla. Hlas stál sedemdesiat kreditov vidIQ, vrátane jednej verzie, ktorá išla do koša. Avatar, grafika aj strih nestáli nič, bežali na open-source nástrojoch. Od zadania po hotový export to trvalo {{CAS_SLOVOM}} a väčšinu z toho počítač renderoval tvár.",
+      "vo": "A teraz čísla. Hlas stál sedemdesiat kreditov vidIQ, vrátane jednej verzie, ktorá išla do koša. Avatar, grafika aj strih nestáli nič, bežali na open-source nástrojoch. Od zadania po hotový export ubehlo vyše deväť hodín a takmer polovicu z toho počítač renderoval tvár.",
       "subs": [
         "hlas: *70 kreditov*",
+        "vrátane verzie do koša.",
         "avatar a strih:",
         "*0 €*",
         "od zadania po export",
-        "*{{CAS}} h*",
-        "väčšinu času *render.*"
+        "vyše *9 hodín*,",
+        "polovicu *render tváre.*"
       ]
     },
     {
