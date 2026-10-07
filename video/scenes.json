@@ -232,11 +232,11 @@
         "type": "costs",
         "badge": "3.",
         "title": "*náklady* a čas",
-        "big": "70 kreditov · 9+ h",
+        "big": "84 kreditov · ≈ 14 h",
         "rows": [
           [
             "hlas (vidIQ)",
-            "70 kr."
+            "84 kr."
           ],
           [
             "avatar (SadTalker)",
@@ -248,19 +248,20 @@
           ],
           [
             "render tváre na CPU",
-            "≈ 4,5 h"
+            "≈ 8,8 h"
           ]
         ]
       },
-      "vo": "A teraz čísla. Hlas stál sedemdesiat kreditov vidIQ, vrátane jednej verzie, ktorá išla do koša. Avatar, grafika aj strih nestáli nič, bežali na open-source nástrojoch. Od zadania po hotový export ubehlo vyše deväť hodín a takmer polovicu z toho počítač renderoval tvár.",
+      "vo": "A teraz čísla. Hlas stál osemdesiatštyri kreditov vidIQ, vrátane dvoch verzií, ktoré išli do koša. Avatar, grafika aj strih nestáli nič, bežali na open-source nástrojoch. Od zadania po hotový export ubehlo približne štrnásť hodín. Takmer deväť z nich počítač renderoval tvár, a viac ako tri hodiny z toho naprázdno, kvôli chybe v strihu zvuku.",
       "subs": [
-        "hlas: *70 kreditov*",
-        "vrátane verzie do koša.",
+        "hlas: *84 kreditov*",
+        "vrátane dvoch verzií do koša.",
         "avatar a strih:",
         "*0 €*",
         "od zadania po export",
-        "vyše *9 hodín*,",
-        "polovicu *render tváre.*"
+        "približne *14 hodín*,",
+        "takmer 9 h *render tváre*,",
+        "3 hodiny *naprázdno.*"
       ]
     },
     {
