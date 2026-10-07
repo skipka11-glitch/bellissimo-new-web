@@ -20,7 +20,9 @@ Celý scenár sa generuje jedným volaním (zachová sa rovnaká intonácia, pla
 | 1 | prvá verzia celého scenára (bez s09) | 1 327 | 28 |
 | 2 | opravené repliky s02, s04, s05, s07 + texty ukážok 1 a 2 | 953 | 14 |
 | 3 | ukážka 3: úvod po anglicky a taliansky | 232 | 14 |
-| 4 | s09 (náklady), až keď sú známe čísla | | 14 |
+| 4 | s09, prvá verzia (čísla prestali platiť po opakovanom renderi) | 269 | 14 |
+| 5 | s09, finálna verzia s nameranými číslami | 343 | 14 |
+| | **spolu** | | **84** |
 
 Prvá verzia mala vety o klonovaní z 20 s nahrávky, ktoré po prechode na hotový hlas Bella neboli pravdivé. Preto volanie 2.
 
@@ -52,3 +54,12 @@ tools/qc.sh out/final.mp4
 - V YouTube Studio zaškrtnúť **„Altered or synthetic content“**.
 - Do popisu: hlas Bella (ElevenLabs cez vidIQ), animácia SadTalker (open source), grafika a strih ffmpeg + Playwright. Overiť, či licencia ElevenLabs/vidIQ pokrýva komerčné použitie hlasu.
 - Štítok „ai avatar · syntetický hlas“ je vo videu viditeľný celý čas.
+
+## 6. namerané náklady a čas
+
+| | |
+|---|---|
+| kredity vidIQ | 84 (z toho 42 za dve zahodené verzie hlasu) |
+| ostatné nástroje | 0 € |
+| render tváre na CPU (4 jadrá) | 8,9 h, z toho 3,6 h naprázdno: pri delení hlasu na scény bol `-ss` za vstupom, fade-out sa časoval od začiatku nahrávky a väčšina replík bola tichá. Opravené; `build.py` aj `avatar_sadtalker.sh` teraz tiché audio odmietnu. |
+| od zadania po export | 14,1 h (6. 10. 18:11 – 7. 10. 08:19 UTC), vrátane pokusov s Higgsfieldom a uspávania kontajnera |

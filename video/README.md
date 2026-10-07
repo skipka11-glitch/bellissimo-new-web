@@ -10,5 +10,6 @@ Vertikálne video (9:16, ~2 min), ktoré celé odrozpráva AI avatar s klonovan�
 | `boards/boards.html` + `tools/render_boards.mjs` | grafické dosky kapitol v štýle (Playwright → PNG) |
 | `tools/build.py` | zostrih: doska hore, titulok, avatar dole, SFX, loudnorm −14 LUFS |
 | `tools/qc.sh` | kontrola finálneho exportu pred odovzdaním |
+| `tools/avatar_sadtalker.sh` | pohyb pier zo SadTalkera (obnoviteľný render) |
 
-Pipeline je overený naprázdno (statická fotka + zástupný zvuk). Výstup 1080×1920 mal 113,8 s a prešiel `qc.sh`. Skutočná produkcia čaká na kredity a vytvorenie klonu hlasu, pozri `produkcia.md`, sekcia 0.
+**Stav:** hotové. `out/final.mp4` (1080×1920, 30 fps, 167,7 s, −14,3 LUFS) prešiel `tools/qc.sh` bez výhrad. Video nie je v gite (53 MB); vznikne znova cez `python3 tools/build.py` z `assets/`. Názov a popis pre YouTube sú v `youtube-popis.md`.
