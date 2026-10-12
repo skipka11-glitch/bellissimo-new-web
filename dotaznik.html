@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chvíľka pre mňa — krátky dotazník</title>
+<meta name="description" content="Pomôž mi vytvoriť jednoduchú digitálnu pomôcku pre mamy, ktoré si chcú dopriať chvíľu pre seba. Vyplnenie zaberie približne 2 minúty.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f1ec;--card:#fffaf6;--ink:#3b302c;--muted:#857470;--rose:#c98b86;--rose-dk:#ad6f6a;--rose-soft:#f3e2de;--line:#e8d9d2;--err:#b04a3f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:48px 16px 64px}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.15}
+  header{text-align:center;margin-bottom:28px}
+  header h1{font-size:clamp(34px,8vw,48px)}
+  header .heart{color:var(--rose)}
+  .intro{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;margin-bottom:22px}
+  .intro p+p{margin-top:12px}
+  .intro .lead{font-family:"Fraunces",serif;font-size:20px;font-weight:500}
+  .time{display:inline-block;margin-top:16px;background:var(--rose-soft);color:var(--rose-dk);font-weight:700;font-size:14px;padding:6px 14px;border-radius:99px}
+
+  .q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:16px;border-width:1px;transition:border-color .2s}
+  .q.invalid{border-color:var(--err)}
+  .q legend,.q label.title{display:block;font-family:"Fraunces",serif;font-size:19px;font-weight:500;margin-bottom:4px;padding:0}
+  .q .num{color:var(--rose);margin-right:6px}
+  .hint{font-size:14px;color:var(--muted);margin-bottom:12px}
+  fieldset.q{border-style:solid;min-width:0}
+  fieldset.q legend{float:left;width:100%}
+  fieldset.q legend+*{clear:both}
+  input[type=text],input[type=email],textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:8px}
+  textarea{min-height:110px;resize:vertical}
+  input:focus-visible,textarea:focus-visible{outline:2px solid var(--rose);outline-offset:2px;border-color:var(--rose)}
+
+  .opt{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;margin-top:8px;cursor:pointer;background:#fff;transition:background .15s,border-color .15s}
+  .opt:hover{border-color:var(--rose)}
+  .opt input{accent-color:var(--rose-dk);width:20px;height:20px;margin-top:2px;flex-shrink:0}
+  .opt:has(input:checked){background:var(--rose-soft);border-color:var(--rose)}
+  .opt:has(input:focus-visible){outline:2px solid var(--rose);outline-offset:2px}
+  .other-field{display:none}
+  .other-field.show{display:block}
+  .err-msg{display:none;color:var(--err);font-size:14px;margin-top:10px}
+  .q.invalid .err-msg{display:block}
+
+  .consent{display:none;font-size:15px}
+  .consent.show{display:flex}
+
+  .submit-row{text-align:center;margin-top:26px}
+  .btn{font:inherit;font-weight:700;font-size:17px;background:var(--rose-dk);color:#fff;border:0;border-radius:99px;padding:15px 38px;cursor:pointer;transition:background .2s}
+  .btn:hover{background:#965b56}
+  .btn:disabled{opacity:.6;cursor:wait}
+  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .legal{font-size:13.5px;color:var(--muted);text-align:center;margin-top:20px}
+  .send-err{display:none;color:var(--err);text-align:center;margin-top:14px}
+
+  .thanks{display:none;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:44px 24px}
+  .thanks h2{font-size:30px;margin-bottom:10px}
+  .done .thanks{display:block}
+  .done #dotaznik,.done .intro{display:none}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>Chvíľka pre mňa <span class="heart">🤍</span></h1>
+  </header>
+
+  <section class="intro">
+    <p class="lead">Pomôž mi vytvoriť niečo, čo mamám naozaj pomôže.</p>
+    <p>Poznáš ten pocit, keď máš konečne chvíľu pre seba, ale si taká unavená, že ani nevieš, čo s ňou? Alebo si sadneš a namiesto oddychu myslíš na všetko, čo ešte treba urobiť?</p>
+    <p>Pripravujem koncept jednoduchej digitálnej pomôcky pre mamy, ktoré si chcú dopriať chvíľu pre seba bez ďalšieho plánovania a tlaku na výkon.</p>
+    <p>Momentálne overujem, čo by vám skutočne pomohlo. Budem rada, ak sa zapojíš do testovania prvých ukážkových kartičiek. ❤️</p>
+    <span class="time">⏱ Vyplnenie zaberie približne 2 minúty</span>
+  </section>
+
+  <!-- Netlify Forms: odpovede nájdeš v Netlify → Forms → „chvilka-pre-mna“ (dajú sa stiahnuť ako CSV). -->
+  <form id="dotaznik" name="chvilka-pre-mna" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/dotaznik.html?odoslane=1" novalidate>
+    <input type="hidden" name="form-name" value="chvilka-pre-mna">
+    <p class="hidden"><label>Nevypĺňaj: <input name="bot-field"></label></p>
+
+    <div class="q">
+      <label class="title" for="meno"><span class="num">1.</span>Ako ťa môžem osloviť?</label>
+      <p class="hint">Nepovinné</p>
+      <input type="text" id="meno" name="meno" autocomplete="given-name" placeholder="Tvoje meno alebo prezývka">
+    </div>
+
+    <div class="q">
+      <label class="title" for="email"><span class="num">2.</span>Kam ti môžem poslať informácie o testovaní?</label>
+      <p class="hint">E-mail, nepovinné</p>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="meno@email.sk">
+      <label class="opt consent" id="consent-wrap">
+        <input type="checkbox" name="suhlas" value="Áno" id="suhlas">
+        <span>Súhlasím, aby mi na tento e-mail prišli informácie o testovaní v súlade s informáciou o ochrane osobných údajov.</span>
+      </label>
+      <p class="err-msg" id="email-err">Skontroluj, prosím, e-mailovú adresu a potvrď súhlas.</p>
+    </div>
+
+    <fieldset class="q" data-required="prekazky">
+      <legend><span class="num">3.</span>Čo ti najviac bráni oddýchnuť si?</legend>
+      <p class="hint">Môžeš označiť viac možností.</p>
+      <label class="opt"><input type="checkbox" name="prekazky" value="Som príliš unavená a nemám energiu"><span>Som príliš unavená a nemám energiu.</span></label>
+      <label class="opt"><input type="checkbox" name="prekazky" value="Neviem vypnúť hlavu"><span>Keď mám chvíľu voľna, neviem vypnúť hlavu.</span></label>
+      <label class="opt"><input type="checkbox" name="prekazky" value="Mám výčitky, keď oddychujem"><span>Mám výčitky, keď oddychujem.</span></label>
+      <label class="opt"><input type="checkbox" name="prekazky" value="Nemám takmer žiadny čas pre seba"><span>Nemám takmer žiadny čas pre seba.</span></label>
+      <label class="opt"><input type="checkbox" name="prekazky" value="Zabudla som na svoje vlastné potreby"><span>Mám pocit, že som zabudla na svoje vlastné potreby.</span></label>
+      <label class="opt"><input type="checkbox" name="prekazky" value="Niečo iné" id="ine-check"><span>Niečo iné.</span></label>
+      <div class="other-field" id="ine-field">
+        <input type="text" name="prekazky_ine" id="ine-text" placeholder="Napíš, čo ti bráni…">
+      </div>
+      <p class="err-msg">Označ, prosím, aspoň jednu možnosť.</p>
+    </fieldset>
+
+    <fieldset class="q" data-required="kedy">
+      <legend><span class="num">4.</span>Kedy by sa ti takáto pomôcka najviac zišla?</legend>
+      <p class="hint">Môžeš označiť viac možností.</p>
+      <label class="opt"><input type="checkbox" name="kedy" value="Keď dieťa zaspí"><span>Keď dieťa zaspí.</span></label>
+      <label class="opt"><input type="checkbox" name="kedy" value="Počas dňa, pár voľných minút"><span>Počas dňa, keď mám pár voľných minút.</span></label>
+      <label class="opt"><input type="checkbox" name="kedy" value="Večer, keď už nevládzem"><span>Večer, keď už nevládzem.</span></label>
+      <label class="opt"><input type="checkbox" name="kedy" value="Keď je toho na mňa priveľa"><span>Keď mám pocit, že je toho na mňa priveľa.</span></label>
+      <p class="err-msg">Označ, prosím, aspoň jednu možnosť.</p>
+    </fieldset>
+
+    <fieldset class="q" data-required="testovanie">
+      <legend><span class="num">5.</span>Chcela by si vyskúšať prvé kartičky a povedať mi úprimne, čo si o nich myslíš?</legend>
+      <label class="opt"><input type="radio" name="testovanie" value="Áno, rada"><span>Áno, rada.</span></label>
+      <label class="opt"><input type="radio" name="testovanie" value="Možno, podľa času"><span>Možno, podľa času.</span></label>
+      <p class="err-msg">Vyber, prosím, jednu možnosť.</p>
+    </fieldset>
+
+    <div class="q">
+      <label class="title" for="pomoc"><span class="num">6.</span>Čo by ti v každodennom živote najviac pomohlo, aby si mala viac priestoru pre seba?</label>
+      <p class="hint">Nepovinné</p>
+      <textarea id="pomoc" name="co_by_pomohlo" placeholder="Pokojne pár slov…"></textarea>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit" class="btn" id="send">Odoslať odpovede</button>
+      <p class="send-err" id="send-err">Odpovede sa nepodarilo odoslať. Skús to, prosím, ešte raz.</p>
+    </div>
+
+    <p class="legal">Prihlásenie je nezáväzné a neznamená povinnosť kúpiť si budúci produkt. Ak uvedieš e-mail, použijem ho na zaslanie informácií o testovaní v súlade s informáciou o ochrane osobných údajov.</p>
+  </form>
+
+  <section class="thanks" aria-live="polite">
+    <h2>Ďakujem 🤍</h2>
+    <p>Ďakujem, že mi pomáhaš vytvoriť niečo zmysluplné.</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  var form = document.getElementById('dotaznik');
+  var email = document.getElementById('email');
+  var consentWrap = document.getElementById('consent-wrap');
+  var consent = document.getElementById('suhlas');
+  var ineCheck = document.getElementById('ine-check');
+  var ineField = document.getElementById('ine-field');
+
+  if (new URLSearchParams(location.search).get('odoslane')) document.body.classList.add('done');
+
+  email.addEventListener('input', function(){
+    consentWrap.classList.toggle('show', email.value.trim() !== '');
+  });
+  ineCheck.addEventListener('change', function(){
+    ineField.classList.toggle('show', ineCheck.checked);
+    if (ineCheck.checked) document.getElementById('ine-text').focus();
+  });
+  form.addEventListener('change', function(e){
+    var q = e.target.closest('.q');
+    if (q) q.classList.remove('invalid');
+  });
+
+  function validate(){
+    var first = null;
+    form.querySelectorAll('[data-required]').forEach(function(fs){
+      var ok = !!fs.querySelector('input[name="' + fs.dataset.required + '"]:checked');
+      fs.classList.toggle('invalid', !ok);
+      if (!ok && !first) first = fs;
+    });
+    var eq = email.closest('.q');
+    var hasEmail = email.value.trim() !== '';
+    var emailOk = !hasEmail || (email.checkValidity() && consent.checked);
+    eq.classList.toggle('invalid', !emailOk);
+    if (!emailOk && (!first || eq.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING)) first = eq;
+    if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    return !first;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validate()) return;
+    var btn = document.getElementById('send');
+    var err = document.getElementById('send-err');
+    btn.disabled = true; err.style.display = 'none';
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function(r){
+      if (!r.ok) throw new Error(r.status);
+      document.body.classList.add('done');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }).catch(function(){
+      err.style.display = 'block';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+</body>
+</html>
